@@ -1,0 +1,194 @@
+/* MoonStory.css */
+.moon-story-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #000;
+    color: white;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    font-family: 'Playfair Display', serif;
+}
+
+.star {
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 5px white;
+    transition: transform 0.2s;
+}
+
+.star:hover {
+    transform: scale(1.5);
+}
+
+.moon {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: #fdfcdc;
+    box-shadow: 0 0 20px #fdfcdc, 0 0 60px rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    position: relative;
+    transition: box-shadow 0.5s;
+}
+
+.moon-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    box-shadow: 0 0 50px rgba(255, 255, 255, 0.5);
+    animation: pulse 3s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.5;
+    }
+
+    50% {
+        transform: translate(-50%, -50%) scale(1.1);
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.5;
+    }
+}
+
+.moon-phase {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: #000;
+    box-shadow: inset -10px 0px 0px 0px #fdfcdc;
+    /* Adjust mainly this for phases */
+    transition: all 1s ease-in-out;
+}
+
+.gift-box {
+    font-size: 80px;
+    cursor: pointer;
+    filter: drop-shadow(0 0 10px gold);
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+.story-text {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-top: 2rem;
+    max-width: 80%;
+    line-height: 1.6;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.next-button {
+    margin-top: 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-family: 'Outfit', sans-serif;
+    transition: all 0.3s;
+    z-index: 10;
+}
+
+.next-button:hover {
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+.star-message {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.9);
+    color: #000;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    pointer-events: none;
+    white-space: nowrap;
+    z-index: 20;
+}
+
+.moon-dotted-container {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.moon-dotted-circle {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 4px dotted rgba(255, 255, 255, 0.5);
+    box-sizing: border-box;
+    animation: rotateDots 10s linear infinite;
+}
+
+.moon-image {
+    width: 90%;
+    height: 90%;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+    z-index: 2;
+    animation: imagePulse 4s ease-in-out infinite;
+}
+
+@keyframes imagePulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+    }
+
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 40px rgba(255, 255, 255, 0.8);
+    }
+
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+    }
+}
+
+@keyframes rotateDots {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
