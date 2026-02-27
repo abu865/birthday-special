@@ -7,11 +7,11 @@ import ParticleImageReveal from './ParticleImageReveal';
 
 // Import Audio Files
 // @ts-ignore
-import introAudio from '../audio/New York Nagaram.mp3';
+import introAudio from '../audio/03.Anjali En Pushpanjali Instrumental.mp3';
 // @ts-ignore
-import mainAudio from '../audio/Munbe Vaa.mp3';
+import mainAudio from '../audio/05.Ava Enna (Vaaranam Aayiram) Instrumental.mp3';
 // @ts-ignore
-import finalAudio from '../audio/Vennilave Vennilave Vinnai.mp3';
+import finalAudio from '../audio/14.ThillanaThillana Instrumental.mp3';
 
 interface MoonStoryProps {
   onComplete: () => void;

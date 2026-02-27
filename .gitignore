@@ -22,3 +22,10 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Ignore large audio files
+src/audio/Ennavale Adi Ennavale.mp3
+src/audio/Munbe Vaa.mp3
+src/audio/New York Nagaram.mp3
+src/audio/Oru Dheivam Thantha Poove Male.mp3
+src/audio/Vennilave Vennilave Vinnai.mp3
