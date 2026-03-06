@@ -23,15 +23,4 @@ dist-ssr
 *.sln
 *.sw?
 
-# Ignore large audio files
-src/audio/Ennavale Adi Ennavale.mp3
-src/audio/Munbe Vaa.mp3
-src/audio/New York Nagaram.mp3
-src/audio/Oru Dheivam Thantha Poove Male.mp3
-src/audio/Vennilave Vennilave Vinnai.mp3
 
-# Ignore images and videos in assets
-src/assets/*.jpg
-src/assets/*.png
-src/assets/*.jpeg
-src/assets/*.mp4
