@@ -4,12 +4,14 @@ import { Play, SkipForward, Music } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import './MoonStory.css';
 import ParticleImageReveal from './ParticleImageReveal';
+import moonImage from '../assets/PXL_20260125_090756472.PORTRAIT.jpg';
+import centerMoonImage from '../assets/IMG-20260202-WA0059.jpg';
 
 // Import Audio Files
 // @ts-ignore
 import introAudio from '../audio/03.Anjali En Pushpanjali Instrumental.mp3';
 // @ts-ignore
-import mainAudio from '../audio/05.Ava Enna (Vaaranam Aayiram) Instrumental.mp3';
+import mainAudio from '../audio/New York Nagaram.mp3';
 // @ts-ignore
 import finalAudio from '../audio/14.ThillanaThillana Instrumental.mp3';
 
@@ -29,11 +31,33 @@ export default function MoonStory({ onComplete }: MoonStoryProps) {
 
   // Initialize stars for Scene 4
   useEffect(() => {
+    const phrases = [
+      'Professional Overthinker 🤔',
+      'Absolute weirdo 🤪',
+      'Built different 🚀',
+      'Certified Cutie Pie 🥧',
+      'Literal Angel 👼',
+      'Too cool for school 😎',
+      '100% Pure Chaos 🌪️',
+      'Main character energy ✨',
+      'Sweet like Jalebi 🍯',
+      'The reason I smile 😊',
+      'Master napper 😴',
+      'Always hungry 🌮',
+      'Vibe matching expert 🎧',
+      'My fav distraction 🙈',
+      'Walking green flag 💚',
+      'Top tier humor 👑',
+      'Precious human ❤️',
+      'Better than pizza 🍕',
+      'Heart stealer 🥺',
+      'Simply the best 🌟'
+    ];
     const newStars = Array.from({ length: 20 }).map((_, i) => ({
       id: i,
-      x: Math.random() * 90 + 5, // 5% to 95%
+      x: Math.random() * 80 + 10, // 10% to 90%
       y: Math.random() * 60 + 5, // Top 65% of screen
-      message: ['You represent beauty', 'You are kind', 'You are special', 'You shine bright', 'So precious 🙈'][i % 5],
+      message: phrases[i],
       revealed: false
     }));
     setStars(newStars);
@@ -172,7 +196,7 @@ export default function MoonStory({ onComplete }: MoonStoryProps) {
       >
         <div className="moon-dotted-circle"></div>
         <motion.img 
-            src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1887&auto=format&fit=crop" 
+            src={moonImage} 
             alt="Person"
             className="moon-image"
             initial={{ opacity: 0 }}
@@ -210,8 +234,15 @@ export default function MoonStory({ onComplete }: MoonStoryProps) {
   
   const renderScene2 = () => (
     <motion.div className="scene-container">
-       <motion.div className="moon" style={{ transform: 'scale(0.8)', marginBottom: '2rem' }}>
+       <motion.div className="moon" style={{ transform: 'scale(0.8)', marginBottom: '2rem', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
         <div className="moon-glow"></div>
+        <motion.img 
+            src={centerMoonImage} 
+            alt="Center Moon" 
+            style={{ width: '60%', height: '60%', borderRadius: '50%', objectFit: 'cover', zIndex: 10, position: 'relative' }}
+            animate={{ y: [-5, 5, -5] }}
+            transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
+        />
        </motion.div>
        
        {reasons.map((reason, index) => (
@@ -260,8 +291,9 @@ export default function MoonStory({ onComplete }: MoonStoryProps) {
           {star.revealed && (
             <motion.div 
               className="star-message"
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: -20 }}
+              initial={{ opacity: 0, y: 10, x: '-50%' }}
+              animate={{ opacity: 1, y: -30, x: '-50%' }}
+              style={{ left: '50%' }}
             >
               {star.message}
             </motion.div>
@@ -284,7 +316,7 @@ export default function MoonStory({ onComplete }: MoonStoryProps) {
        style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}
      >
         <ParticleImageReveal 
-           imageSrc="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1887&auto=format&fit=crop"
+           imageSrc={moonImage}
            width={window.innerWidth > 500 ? 400 : 300}
            height={window.innerWidth > 500 ? 500 : 400} 
         />

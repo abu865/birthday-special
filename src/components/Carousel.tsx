@@ -1,13 +1,17 @@
 import { type FC } from 'react';
 import './Carousel.css';
+import img1 from '../assets/IMG20251220160043.jpg';
+import img2 from '../assets/PXL_20260125_015050249.PORTRAIT.jpg';
+import img3 from '../assets/PXL_20260125_024915462.MP.jpg';
+import img4 from '../assets/PXL_20260125_090756472.PORTRAIT.jpg';
+import img5 from '../assets/PXL_20260201_110236058.jpg';
 
 const images = [
-  "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=500&auto=format&fit=crop&q=60",
-  "https://images.unsplash.com/photo-1513201099705-a9746e1e201f?w=500&auto=format&fit=crop&q=60",
-  "https://images.unsplash.com/photo-1530103862676-de3c9a59af57?w=500&auto=format&fit=crop&q=60",
-  "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=500&auto=format&fit=crop&q=60",
-  "https://images.unsplash.com/photo-1527529482837-4698179dc6ce?w=500&auto=format&fit=crop&q=60",
-  "https://images.unsplash.com/photo-1504196606672-aef5c9cefc92?w=500&auto=format&fit=crop&q=60"
+  img1,
+  img2,
+  img3,
+  img4,
+  img5
 ];
 
 const Carousel: FC = () => {

@@ -62,7 +62,7 @@ const Hero: FC<HeroProps> = ({ onEnter }) => {
           padding: '0 10px'
         }}
       >
-        A Special Surprise
+        A Special Surprise  
       </motion.h1>
 
       <motion.p

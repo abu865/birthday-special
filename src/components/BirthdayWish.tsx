@@ -90,7 +90,7 @@ const BirthdayWish: FC<BirthdayWishProps> = ({ onStartStory }) => {
           color: '#ff9966',
           marginBottom: '2rem' 
         }}>
-          To My Favorite Person
+          To Comfort Zone
         </h2>
       </motion.div>
 

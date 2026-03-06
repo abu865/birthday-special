@@ -5,14 +5,15 @@ import FloatingHearts from './components/FloatingHearts';
 import AudioPlayer from './components/AudioPlayer';
 import Quiz from './components/Quiz';
 import MoonStory from './components/MoonStory';
+import InstaSlider from './components/InstaSlider';
 
 function App() {
-  const [step, setStep] = useState<'hero' | 'quiz' | 'wish' | 'story'>('hero');
+  const [step, setStep] = useState<'hero' | 'quiz' | 'wish' | 'story' | 'slider'>('hero');
 
   return (
     <div className="app-container">
       <FloatingHearts />
-      {step !== 'story' && <AudioPlayer />}
+      {step !== 'story' && step !== 'slider' && <AudioPlayer />}
       
       {step === 'hero' && (
         <Hero onEnter={() => setStep('quiz')} />
@@ -29,7 +30,11 @@ function App() {
       )}
 
       {step === 'story' && (
-        <MoonStory onComplete={() => setStep('wish')} />
+        <MoonStory onComplete={() => setStep('slider')} />
+      )}
+
+      {step === 'slider' && (
+        <InstaSlider onComplete={() => setStep('wish')} />
       )}
     </div>
   );
