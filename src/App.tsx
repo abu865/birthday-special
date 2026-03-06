@@ -9,7 +9,6 @@ import InstaSlider from './components/InstaSlider';
 
 function App() {
   const [step, setStep] = useState<'hero' | 'quiz' | 'wish' | 'story' | 'slider'>('hero');
-
   return (
     <div className="app-container">
       <FloatingHearts />
